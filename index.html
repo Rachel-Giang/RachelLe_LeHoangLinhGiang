@@ -7,7 +7,7 @@
 <meta name="description" content="Rachel Le (Lê Hoàng Linh Giang), Project Coordinator for cross-border projects in Ho Chi Minh City.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600&family=Mali:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600&family=Mali:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 /* Layout: the page is one day. Morning and noon tell the work story, a sunset band turns the page,
    night holds travel, dreams and contact. Photos sit like pinned prints with handwritten notes. Single deliberate look. */
@@ -29,9 +29,9 @@
   --night-line:#2B3B6D;
   --moon:#FFF4D9;
   --moon-soft:#C5CEEA;
-  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
-  --f-body:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --f-hand:"Mali", "Comic Sans MS", "Segoe Print", cursive;
+  --f-display:"Fraunces", "Noto Sans SC", Georgia, "Times New Roman", serif;
+  --f-body:"Be Vietnam Pro", "Noto Sans SC", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-hand:"Mali", "Noto Sans SC", "Comic Sans MS", "Segoe Print", cursive;
   --gutter-l:max(16px, env(safe-area-inset-left, 0px));
   --gutter-r:max(16px, env(safe-area-inset-right, 0px));
 }
@@ -250,6 +250,7 @@ ul.pts li::marker{color:var(--sun-deep)}
 footer{background:#0A1230;color:var(--moon-soft);font-size:.85rem;padding-block:0 36px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--night-line);padding-top:22px}
 footer .hand{color:var(--moon)}
+footer .ai-note:empty{display:none}
 </style>
 </head>
 <body>
@@ -267,6 +268,7 @@ footer .hand{color:var(--moon)}
     <div class="lang" role="group" aria-label="Language">
       <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" id="btn-vi" data-lang="vi" aria-pressed="false">VI</button>
+      <button type="button" id="btn-zh" data-lang="zh" aria-pressed="false" lang="zh-CN">中文</button>
     </div>
   </div>
 </nav>
@@ -572,6 +574,7 @@ footer .hand{color:var(--moon)}
 <footer>
   <div class="wrap">
     <span>© 2026 Rachel Le</span>
+    <span class="ai-note" data-i18n="ai_note"></span>
     <span class="hand" data-i18n="foot">made with the colours of a whole day, sunrise to night sky</span>
   </div>
 </footer>
@@ -646,21 +649,23 @@ footer .hand{color:var(--moon)}
     t_contact:"11:00 tối · gửi lời chào", ct_h:"Giữ liên lạc nhé",
     ct_p:"Mình luôn vui khi được trò chuyện về dự án, sự kiện, hay chuyện làm việc giữa Việt Nam và Đài Loan.",
     ct_mail:"Gửi email", ct_copy:"Sao chép email", where:"TP. Hồ Chí Minh, Việt Nam",
-    foot:"làm từ sắc màu của một ngày trọn vẹn, từ bình minh đến bầu trời đêm"
+    ai_note:"", foot:"làm từ sắc màu của một ngày trọn vẹn, từ bình minh đến bầu trời đêm"
   };
+  var ZH = {"nav_about": "关于我", "nav_exp": "工作经历", "nav_proj": "项目", "nav_tool": "技能", "nav_after": "工作之余", "nav_contact": "联系", "hello": "你好，我是", "fullname": "Lê Hoàng Linh Giang · 胡志明市", "hero_role": "项目协调专员 <span>· 跨境项目</span>", "hero_tag": "从规划旅行到协调跨境项目，我让每一段旅程顺利抵达终点。", "hero_cta1": "打个招呼", "hero_cta2": "查看我的简历", "f1a": "自2016年起", "f1b": "协调人与计划", "f2a": "4个行业", "f2b": "旅游、纺织、建筑、IT", "f3b": "雅思6.5 · HSK4 · 母语", "cap_portrait": "很高兴认识你！", "sticker": "就是我！", "t_about": "上午8:00 · 关于我", "about_h": "一个从旅行起步的协调者", "about_p1": "我的第一份工作是在越南各地协调自行车旅游团。总是同时处理很多预订，行程紧凑，客人希望一切顺顺利利。我最喜欢的，是计划终于全部到位的那一刻。", "about_p2": "十年过去了，我做的事本质上没变，只是换了不同的行业：旅游、纺织、建筑，现在是IT基础设施。目前我在General Resources负责协调AI基础设施和数字化转型项目，公司隶属台湾MiTAC Information Technology集团。", "about_p3": "英语和中文让我可以直接与台湾合作伙伴沟通。工作之余，我正在胡志明市经济大学（UEH）攻读工商管理硕士。", "good_h": "我能为团队带来什么", "v1h": "计划始终在轨道上", "v1p": "我协调的项目订单100%准时、足量交付。", "v2h": "让每个人保持连接", "v2p": "我是台湾合作伙伴、客户、工程师和物流团队之间的桥梁。", "v3h": "问题提前解决", "v3p": "我及早发现风险，跟进行动计划，在延误影响客户之前把问题解决。", "t_exp": "上午10:00 · 工作经历", "exp_h": "我的工作经历", "gr_when": "2021年6月至今", "gr_sub": "MiTAC Information Technology（台湾）的子公司", "gr_r1d": "2022年7月至今", "promo": "获得晋升！", "gr_r2d": "2021年6月至2022年6月", "gr1_1": "协调AI基础设施和数字化转型项目，从订单确认到交付与安装。", "gr1_2": "担任台湾合作伙伴、客户、工程师和物流供应商之间的主要联络人。", "gr1_3": "跟踪进度、风险和问题，并与技术及物流团队及早解决。", "gr1_4": "用Excel制作进度、预算、现金流报告和数据看板。", "gr1_5": "协调国际客户活动和展会。", "gr2_1": "跟踪多个建筑与安装项目的进度、承包商和验收计划。", "gr2_2": "协调承包商付款申请，监控项目成本。", "gr2_3": "协助项目经理处理排期和日常问题。", "ph_when": "2018年10月至2020年8月", "ph_sub": "纺织服装 · 跟单员", "ph_1": "通过协调客户、供应商、生产和品质团队，确保生产和交货日期按计划进行。", "ph_2": "直接与供应商沟通，解决原辅料交付问题。", "vbt_when": "2016年2月至2018年12月", "vbt_sub": "旅游 · 旅游团协调员", "vbt_1": "协调国内外旅游团的预订和供应商付款，在紧凑的行程下同时处理大量预订。", "t_proj": "下午2:00 · 亮点", "proj_h": "让我自豪的项目", "cap_metro": "和团队在地铁1号线车辆段", "p1t": "基础设施", "p1h": "胡志明市地铁1号线", "p1p": "我在越南第一条地铁线上协调并跟踪安装进度。能参与一个全城期待多年的项目，是我会一直记得的经历。", "cap_def": "我们的MiTAC展位，2024越南国防展", "p2t": "展会", "p2h": "2024与2026越南国际国防展", "p2p": "协调公司参加由越南国防部主办的展会，与供应商、物流、市场和技术团队合作，确保展位在开幕当天准备就绪。", "p3t": "科技", "p3h": "AI基础设施与数字化转型", "p3p": "在台湾合作伙伴、客户和工程师之间推动跨部门项目，从第一份报价到最终安装。", "p4t": "新品发布", "p4h": "2026年6月河内新品发布会", "p4p": "协调与MiTAC和AMD合作开发的企业级AI助手发布会，从场地、后勤到活动当天。", "p5t": "报告", "p5h": "项目数据看板", "p5p": "Excel跟踪表、预算和现金流报告，让管理层一眼看清进度和支出。", "wall_h": "活动照片墙", "wall_sub": "一些我协调过的活动，也有几场是我去学习参加的。", "w1": "2024越南国防展，河内", "w2": "协调我们在2025秋季经济论坛的展位", "w3": "2025越南ICT COMM展", "w4": "与MiTAC和AMD的新品发布会，河内2026", "w5": "参加2026秋季经济论坛", "w6": "参观2025台北智慧城市展", "t_tool": "下午4:00 · 工具箱", "tool_h": "技能、语言与教育背景", "sk_h": "技能", "sk1": "项目排期", "sk2": "利益相关方协调", "sk3": "风险与问题跟踪", "sk4": "活动与展会", "sk5": "供应商管理", "sk6": "预算与现金流报告", "sk7": "项目文档", "sk8": "Excel高级应用", "lg_h": "语言", "lg_vi": "越南语", "lg_vi2": "母语", "lg_en": "英语", "lg_zh": "中文", "ed_h": "教育背景", "ed1": "工商管理硕士", "ed1s": "胡志明市经济大学（UEH）· 预计2028年毕业", "ed2": "银行与金融学士", "ed2s": "GPA 3.12 / 4.00", "t_dusk": "下午6:00 · 日落", "dusk_q": "白天，我让项目按计划推进。夜晚，我规划下一段旅程。", "t_after": "晚上8:00 · 工作之余", "after_h": "日程表背后的我", "tr_k": "旅行", "tr_h": "三次泰国，两次台湾", "tr_p": "在泰国，我自己规划路线、预订住宿，并带着大家一起出发。", "tr_q": "朋友们说，在“协调”成为我的职位之前，我早就在做这件事了。", "tr_p2": "两次去台湾出差，让我见到了合作伙伴，也参观了智慧城市展，每次我都会留一点时间到处走走。", "cap_friends": "我的旅伴们", "cap_bkk": "日落后的曼谷", "cap_coffee": "和朋友们的悠闲早晨", "cap_bali": "台北淡水", "cap_dream": "下一站：更远的地方", "cn_k": "梦想路线", "cn_h": "我为之学习中文的中国之旅", "cn_p": "我热爱中国文化，也着迷于古代中国的韵味。总有一天，我想走遍这些地方，用当地人的语言和他们聊天。", "cn_p2": "台湾是我第一次在现实中用中文和合作伙伴工作的地方，这让我更想走得更远。", "cn_hsk": "目前：HSK4", "mv_k": "电影", "mv_h": "一张票，谢谢", "mv_p": "我很爱看电影，最喜欢的方式是一个人去电影院：一个好座位，灯光暗下，两个小时什么都不用计划。", "dr_k": "画画", "dr_h": "画画是为了静心，不是为了完美", "dr_p": "我跟着教程画画，也玩数字填色，在忙碌的一天后让自己安静下来。我的画还远远称不上好看，但这也是乐趣的一部分。", "t_stars": "晚上10:00 · 星星的故事", "stars_h": "纯属好玩", "s1w": "太阳", "s1h": "摩羯座", "s1n": "计划者", "s1p": "稳重、目标明确，有清晰的计划时最开心。", "s2w": "月亮", "s2h": "处女座", "s2n": "细节守护者", "s2p": "一切都检查过、井井有条时才安心。", "s3w": "上升", "s3h": "天秤座", "s3n": "调解者", "s3p": "给人友善的第一印象，擅长在各方之间找到平衡点。", "stars_fine": "我不会按星座来协调项目，但它们对我工作风格的描述准得出奇。", "t_contact": "晚上11:00 · 打个招呼", "ct_h": "保持联系吧", "ct_p": "很乐意聊聊项目、活动，或者在越南和台湾之间合作的事。", "ct_mail": "发送邮件", "ct_copy": "复制邮箱", "where": "越南胡志明市", "foot": "用一整天的颜色制作，从日出到夜空", "ai_note": "中文版本由我在AI协助下翻译"};
   var nodes = document.querySelectorAll("[data-i18n]");
   var EN = {};
   nodes.forEach(function(n){ var k=n.getAttribute("data-i18n"); if(!(k in EN)) EN[k]=n.innerHTML; });
-  var copied = {en:"Email copied.", vi:"Đã sao chép email."};
-  var selectMsg = {en:"Select the address above to copy it.", vi:"Hãy bôi đen địa chỉ phía trên để sao chép."};
+  var copied = {en:"Email copied.", vi:"Đã sao chép email.", zh:"邮箱已复制。"};
+  var selectMsg = {en:"Select the address above to copy it.", vi:"Hãy bôi đen địa chỉ phía trên để sao chép.", zh:"请选中上方的邮箱地址进行复制。"};
   var current = "en";
   function apply(lang){
     current = lang;
-    var dict = lang === "vi" ? VI : EN;
+    var dict = lang === "vi" ? VI : (lang === "zh" ? ZH : EN);
     nodes.forEach(function(n){ var k=n.getAttribute("data-i18n"); if(dict[k]!=null) n.innerHTML = dict[k]; });
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
     document.getElementById("btn-en").setAttribute("aria-pressed", lang==="en");
     document.getElementById("btn-vi").setAttribute("aria-pressed", lang==="vi");
+    document.getElementById("btn-zh").setAttribute("aria-pressed", lang==="zh");
     document.getElementById("copy-msg").textContent = "";
     try{ localStorage.setItem("rl-lang", lang); }catch(e){}
   }
@@ -669,7 +674,7 @@ footer .hand{color:var(--moon)}
   });
   var saved = null;
   try{ saved = localStorage.getItem("rl-lang"); }catch(e){}
-  if(saved === "vi") apply("vi"); else document.documentElement.lang = "en";
+  if(saved === "vi" || saved === "zh") apply(saved); else document.documentElement.lang = "en";
 
   document.getElementById("copy").addEventListener("click", function(){
     var msg = document.getElementById("copy-msg"), email = document.getElementById("email");
