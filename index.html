@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rachel Le</title>
+<meta name="description" content="Rachel Le (Lê Hoàng Linh Giang), Project Coordinator for cross-border projects in Ho Chi Minh City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600&family=Mali:wght@500;600&display=swap">
+<style>
+/* Layout: the page is one day. Morning and noon tell the work story, a sunset band turns the page,
+   night holds travel, dreams and contact. Photos sit like pinned prints with handwritten notes. Single deliberate look. */
+:root{
+  color-scheme: light;
+  --sky-wash:#E9F3FF;
+  --sun-wash:#FFF4C2;
+  --paper:#FFFFFF;
+  --ink:#16234B;
+  --ink-soft:#4C5A7C;
+  --line:#D3E1F4;
+  --sun:#FFD21F;          /* bright sunlight */
+  --sun-deep:#F5B800;
+  --sunset:#FF9A3D;
+  --sky:#5AA9F0;
+  --sky-deep:#1F5FC4;
+  --night:#0E1736;
+  --night-2:#18264F;
+  --night-line:#2B3B6D;
+  --moon:#FFF4D9;
+  --moon-soft:#C5CEEA;
+  --f-display:"Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:"Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-hand:"Mali", "Comic Sans MS", "Segoe Print", cursive;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--sky-wash);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--sky-wash)}
+a{color:var(--sky-deep)}
+img,video{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--sun-deep);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.12;margin:0;text-wrap:balance;font-weight:600}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.hand{font-family:var(--f-hand);font-weight:500}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .4s,border-color .4s;
+  background:rgba(233,243,255,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;padding-block:12px}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.25rem;text-decoration:none;color:var(--ink);margin-right:auto;white-space:nowrap}
+.links{display:flex;gap:20px;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--ink-soft);font-size:.92rem}
+.links a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sun-deep);text-underline-offset:5px;text-decoration-thickness:2px}
+.lang{display:flex;gap:2px;flex-shrink:0;font-size:.85rem}
+.lang button{font:600 .85rem/1 var(--f-body);border:0;background:transparent;color:var(--ink-soft);padding:6px 8px;cursor:pointer;border-radius:6px}
+.lang button[aria-pressed="true"]{color:var(--ink);background:var(--sun)}
+.nav.is-night{background:rgba(14,23,54,.88);border-bottom-color:var(--night-line)}
+.nav.is-night .brand{color:var(--moon)}
+.nav.is-night .links a,.nav.is-night .lang button{color:var(--moon-soft)}
+.nav.is-night .lang button[aria-pressed="true"]{color:var(--night);background:var(--sun)}
+@media (max-width:860px){.links{display:none}}
+
+/* shared */
+section{padding-block:84px}
+.time{font-family:var(--f-hand);font-size:1.05rem;color:var(--sky-deep);margin-bottom:6px;display:block}
+.h2{font-size:clamp(1.9rem,4.2vw,2.8rem);margin-bottom:28px}
+.lede{max-width:62ch;color:var(--ink-soft);font-size:1.05rem}
+
+/* photo print */
+.print{background:#fff;padding:10px 10px 0;box-shadow:0 14px 30px -18px rgba(22,35,75,.5),0 2px 6px rgba(22,35,75,.08);transform:rotate(var(--tilt,0deg));transition:transform .3s}
+.print:hover{transform:rotate(0deg) scale(1.02)}
+.print img,.print video{width:100%;height:100%;object-fit:cover;background:#E7ECF5}
+.print .frame{aspect-ratio:var(--ratio,4/3);max-width:100%;overflow:hidden}
+.print figcaption{font-family:var(--f-hand);font-size:.98rem;color:#3B4566;padding:8px 2px 12px;text-align:center;line-height:1.3}
+figure{margin:0}
+
+/* hero */
+.hero{padding-block:64px 92px;background:
+  radial-gradient(110% 80% at 88% 0%, var(--sun-wash) 0%, rgba(255,244,194,0) 60%),
+  linear-gradient(180deg,var(--sky-wash) 0%, #F3F8FF 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center}
+.hero-copy{min-width:0}
+.hello{font-family:var(--f-hand);font-size:1.5rem;color:var(--sunset)}
+.hero h1{font-size:clamp(3.2rem,8.5vw,5.8rem);font-weight:700;letter-spacing:-.015em;margin-top:2px}
+.hero h1 mark{background:linear-gradient(transparent 62%, var(--sun) 62%, var(--sun) 92%, transparent 92%);color:inherit;padding:0 .04em}
+.fullname{color:var(--ink-soft);margin-top:6px;font-size:1.05rem}
+.role{margin-top:22px;font-weight:600;font-size:1.1rem}
+.role span{color:var(--ink-soft);font-weight:400}
+.tagline{margin-top:14px;font-family:var(--f-display);font-weight:500;font-size:clamp(1.25rem,2.4vw,1.55rem);max-width:28ch;line-height:1.4}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;text-decoration:none;font-weight:600;font-size:.98rem;padding:12px 22px;border-radius:10px;border:2px solid var(--ink);cursor:pointer;font-family:var(--f-body);transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:34px;padding-top:20px;border-top:1px dashed #B9CBE6}
+.facts div{font-size:.9rem;color:var(--ink-soft);line-height:1.45}
+.facts strong{display:block;font-family:var(--f-display);font-size:1.3rem;color:var(--ink);font-weight:600}
+.hero-photo{justify-self:center;width:min(340px,100%);position:relative}
+.hero-photo .print{--tilt:2.5deg;--ratio:4/5}
+.hero-photo .print img{object-position:50% 20%}
+.sticker{position:absolute;left:-18px;bottom:64px;background:var(--sun);color:var(--ink);font-family:var(--f-hand);font-weight:600;font-size:.95rem;padding:6px 14px;border-radius:999px;transform:rotate(-6deg);box-shadow:0 6px 14px -8px rgba(22,35,75,.5)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero-photo{width:min(270px,78%);order:-1}.sticker{left:-10px}}
+
+/* about */
+.about{background:#F3F8FF}
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start}
+.about-grid>*{min-width:0}
+.story{font-size:1.06rem}
+.story p+p{margin-top:16px}
+.good h3{font-size:1.3rem;margin-bottom:10px}
+.good ol{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.good li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.good .n{font-family:var(--f-hand);font-weight:600;font-size:1.2rem;width:34px;height:34px;border-radius:50%;background:var(--sun);display:grid;place-items:center;line-height:1}
+.good strong{display:block;font-weight:600}
+.good span{color:var(--ink-soft);font-size:.95rem}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+/* experience */
+.exp{background:var(--paper)}
+.job{display:grid;grid-template-columns:190px 1fr;gap:28px;padding-block:28px;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job>*{min-width:0}
+.when{font-size:.9rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.company{font-family:var(--f-display);font-size:1.5rem;font-weight:600}
+.company small{display:block;font-family:var(--f-body);font-size:.9rem;font-weight:400;color:var(--ink-soft);margin-top:2px}
+.roles{display:grid;gap:18px;margin-top:14px}
+.r-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-weight:600}
+.r-title .dates{font-weight:400;font-size:.88rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.promo{font-family:var(--f-hand);font-size:.95rem;color:var(--sunset);font-weight:600}
+ul.pts{margin:8px 0 0;padding-left:1.1em;color:var(--ink-soft)}
+ul.pts li{margin-top:4px}
+ul.pts li::marker{color:var(--sun-deep)}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* projects */
+.proj{background:linear-gradient(180deg,var(--paper) 0%,var(--sun-wash) 100%)}
+.metro{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;background:var(--ink);color:var(--moon);border-radius:20px;padding:clamp(20px,4vw,40px);margin-bottom:22px}
+.metro>*{min-width:0}
+.metro .print{--tilt:-2deg;--ratio:4/3}
+.metro .kicker{font-family:var(--f-hand);color:var(--sun);font-size:1.05rem}
+.metro h3{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-top:4px}
+.metro p{color:#D3DBF1;margin-top:12px}
+.metro.flip{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.metro.flip .print{order:2;--tilt:2deg}
+.metro.flip .kicker{color:var(--sky-deep)}
+.metro.flip p{color:var(--ink-soft)}
+.wall-h{font-size:clamp(1.4rem,2.6vw,1.8rem);margin-top:56px}
+.wall-sub{color:var(--ink-soft);margin-top:6px}
+.wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 24px;margin-top:28px;align-items:start}
+.wall .print{--ratio:4/3}
+.wall .print:nth-child(3n+1){--tilt:-1.5deg}.wall .print:nth-child(3n+2){--tilt:1.2deg}.wall .print:nth-child(3n){--tilt:-.8deg}
+@media (max-width:760px){.metro.flip .print{order:0}.wall{grid-template-columns:1fr 1fr;gap:18px}}
+@media (max-width:460px){.wall{grid-template-columns:1fr}}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:4px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card .kicker{font-family:var(--f-hand);color:var(--sky-deep);font-size:1rem}
+.card h3{font-size:1.35rem}
+.card p{color:var(--ink-soft)}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.metro,.cards{grid-template-columns:1fr}}
+
+/* toolkit */
+.tool{background:var(--sun-wash)}
+.tool-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.tool-grid>*{min-width:0}
+.tool h3{font-size:1.3rem;margin-bottom:12px;padding-bottom:8px;border-bottom:3px solid var(--sun)}
+.skills{margin:0;padding:0;list-style:none;columns:2;column-gap:20px}
+.skills li{break-inside:avoid;padding:4px 0;font-size:.97rem}
+.skills li::before{content:"✓ ";color:var(--sun-deep);font-weight:700}
+.lrow{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding:6px 0;border-bottom:1px dashed #E4CF8A}
+.lrow:last-child{border-bottom:0}
+.lrow span:last-child{color:var(--ink-soft);font-size:.94rem;text-align:right}
+.edu{display:grid;gap:14px}
+.edu strong{display:block;font-weight:600;line-height:1.4}
+.edu span{color:var(--ink-soft);font-size:.94rem}
+@media (max-width:900px){.tool-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.skills{columns:1}}
+
+/* dusk */
+.dusk{padding-block:120px;text-align:center;color:var(--moon);
+  background:linear-gradient(180deg,var(--sun-wash) 0%,var(--sun) 16%,var(--sunset) 40%,#9A5B86 64%,var(--night-2) 85%,var(--night) 100%)}
+.dusk .time{color:var(--ink)}
+.dusk blockquote{margin:0 auto;max-width:22ch;font-family:var(--f-display);font-weight:600;font-size:clamp(1.9rem,5vw,3.1rem);line-height:1.18;text-shadow:0 2px 24px rgba(14,23,54,.35)}
+
+/* night */
+.night{background:var(--night);color:var(--moon)}
+.night .time{color:var(--sun)}
+.night .h2{color:var(--moon)}
+.night .lede{color:var(--moon-soft)}
+.block{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;padding-block:28px;border-top:1px solid var(--night-line)}
+.block:first-of-type{border-top:0;padding-top:0}
+.block>*{min-width:0}
+.block .kicker{font-family:var(--f-hand);color:var(--sun);font-size:1.05rem}
+.block h3{font-size:clamp(1.45rem,2.8vw,1.9rem);color:var(--moon);margin-top:2px}
+.block p{color:var(--moon-soft);margin-top:12px}
+.block p.quote{font-family:var(--f-hand);color:var(--moon);font-size:1.08rem}
+.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.reels .print{--ratio:9/16}
+.reels .print:nth-child(1){--tilt:-2deg}.reels .print:nth-child(2){--tilt:1.5deg}.reels .print:nth-child(3){--tilt:-1deg}
+.pics{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:16px;margin-top:22px;align-items:start}
+.pics .print:nth-child(1){--tilt:1.5deg;--ratio:4/3}
+.pics .print:nth-child(2){--tilt:-2deg;--ratio:3/4}
+.pics .print:nth-child(3){--tilt:2deg;--ratio:3/4}
+.dream-photo .print{--tilt:-2deg;--ratio:3/4;max-width:300px}
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:10px 0;margin-top:22px}
+.stop{display:flex;flex-direction:column;align-items:center;min-width:84px;text-align:center}
+.stop .zh{font-size:1.6rem;color:var(--sun);line-height:1.2}
+.stop .en{font-size:.82rem;color:var(--moon-soft)}
+.leg{flex:1 1 20px;min-width:16px;height:2px;background:repeating-linear-gradient(90deg,var(--sunset) 0 6px,transparent 6px 12px);margin-bottom:22px}
+.hsk{display:inline-block;margin-top:18px;font-family:var(--f-hand);font-weight:600;color:var(--night);background:var(--sun);padding:4px 14px;border-radius:999px;transform:rotate(-2deg)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-top:28px;border-top:1px solid var(--night-line)}
+.duo>*{min-width:0}
+@media (max-width:820px){.block,.duo{grid-template-columns:1fr;gap:24px}.dream-photo{order:2}}
+@media (max-width:560px){.reels{gap:10px}.reels .print{padding:6px 6px 0}.reels figcaption{font-size:.82rem}.pics{grid-template-columns:1fr 1fr}.pics .print:nth-child(1){grid-column:1/-1}}
+@media (max-width:520px){.route{flex-direction:column;align-items:flex-start;gap:2px}.leg{width:2px;height:16px;flex:0 0 auto;margin:0 0 0 40px;background:repeating-linear-gradient(180deg,var(--sunset) 0 5px,transparent 5px 10px)}.stop{flex-direction:row;gap:12px;align-items:baseline;min-width:0}}
+
+/* stars */
+.stars{background:linear-gradient(180deg,var(--night) 0%,#0A1230 100%);color:var(--moon)}
+.stars .time{color:var(--sun)}
+.stars .h2{color:var(--moon)}
+.signs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.sign{border-top:2px solid var(--sun);padding-top:16px}
+.sign .which{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--moon-soft)}
+.sign h3{font-size:1.6rem;color:var(--moon);margin-top:2px}
+.sign .nick{font-family:var(--f-hand);color:var(--sun);font-size:1.05rem}
+.sign p{color:var(--moon-soft);margin-top:6px;font-size:.95rem}
+.fine{margin-top:26px;font-family:var(--f-hand);color:var(--moon-soft)}
+@media (max-width:760px){.signs{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:#0A1230;color:var(--moon);padding-block:84px 60px}
+.contact .time{color:var(--sun)}
+.contact h2{font-size:clamp(2rem,5vw,3.2rem);color:var(--moon)}
+.contact .lede{color:var(--moon-soft);margin-top:12px}
+.mail{margin-top:26px}
+.mail code{font-family:var(--f-body);font-size:clamp(1.1rem,2.8vw,1.5rem);font-weight:600;color:var(--sun);user-select:all;word-break:break-all}
+.contact .btn{border-color:var(--moon);color:var(--moon)}
+.contact .btn:hover{box-shadow:4px 4px 0 var(--sun)}
+.contact .btn-sun{background:var(--sun);border-color:var(--sun);color:var(--night)}
+.copy-msg{font-size:.88rem;color:var(--moon-soft);min-height:1.4em;margin-top:10px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:18px;color:var(--moon-soft);font-size:.92rem}
+footer{background:#0A1230;color:var(--moon-soft);font-size:.85rem;padding-block:0 36px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1px solid var(--night-line);padding-top:22px}
+footer .hand{color:var(--moon)}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Rachel Le</a>
+    <div class="links">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#experience" data-i18n="nav_exp">Experience</a>
+      <a href="#projects" data-i18n="nav_proj">Projects</a>
+      <a href="#toolkit" data-i18n="nav_tool">Skills</a>
+      <a href="#after-hours" data-i18n="nav_after">After hours</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-vi" data-lang="vi" aria-pressed="false">VI</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="hello" data-i18n="hello">Hi, I'm</div>
+      <h1>Rachel <mark>Le</mark></h1>
+      <div class="fullname" data-i18n="fullname">Lê Hoàng Linh Giang · Ho Chi Minh City</div>
+      <div class="role" data-i18n="hero_role">Project Coordinator <span>· cross-border projects</span></div>
+      <p class="tagline" data-i18n="hero_tag">From planning tours to running cross-border projects, I make journeys happen.</p>
+      <div class="cta">
+        <a class="btn btn-sun" href="#contact" data-i18n="hero_cta1">Say hello</a>
+        <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener" data-i18n="hero_cta2">View my CV</a>
+      </div>
+      <div class="facts">
+        <div><strong data-i18n="f1a">Since 2016</strong><span data-i18n="f1b">coordinating people and plans</span></div>
+        <div><strong data-i18n="f2a">4 industries</strong><span data-i18n="f2b">travel, textiles, construction, IT</span></div>
+        <div><strong>EN · 中文 · VI</strong><span data-i18n="f3b">IELTS 6.5 · HSK4 · native</span></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <figure class="print">
+        <div class="frame"><img src="media/portrait.jpg?v=2" alt="Black and white portrait of Rachel Le in glasses and a white shirt" width="1200" height="1500"></div>
+        <figcaption data-i18n="cap_portrait">nice to meet you!</figcaption>
+      </figure>
+      <span class="sticker" data-i18n="sticker">that's me!</span>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <span class="time" data-i18n="t_about">8:00 am · about me</span>
+    <h2 class="h2" data-i18n="about_h">A coordinator who started with travel</h2>
+    <div class="about-grid">
+      <div class="story">
+        <p data-i18n="about_p1">My first job was coordinating bike tours around Vietnam. There were always many bookings at once, tight schedules and guests who expected everything to run smoothly. I loved the moment a plan finally came together.</p>
+        <p data-i18n="about_p2">Ten years later I still do the same thing at heart, just in different industries: travel, textiles, construction and now IT infrastructure. Today I coordinate AI infrastructure and digital transformation projects at General Resources, part of Taiwan's MiTAC Information Technology group.</p>
+        <p data-i18n="about_p3">English and Chinese let me talk directly with our partners in Taiwan. In my free time I am studying for an MBA at UEH.</p>
+      </div>
+      <div class="good">
+        <h3 data-i18n="good_h">What I bring to a team</h3>
+        <ol>
+          <li><span class="n">1</span><div><strong data-i18n="v1h">Plans that stay on track</strong><span data-i18n="v1p">A 100% on-time, in-full record across the project orders I coordinated.</span></div></li>
+          <li><span class="n">2</span><div><strong data-i18n="v2h">People who stay connected</strong><span data-i18n="v2p">I am the link between Taiwanese partners, customers, engineers and logistics teams.</span></div></li>
+          <li><span class="n">3</span><div><strong data-i18n="v3h">Problems caught early</strong><span data-i18n="v3p">I spot risks, follow up on action plans and fix delays before they reach the customer.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="experience">
+  <div class="wrap">
+    <span class="time" data-i18n="t_exp">10:00 am · experience</span>
+    <h2 class="h2" data-i18n="exp_h">Where I have worked</h2>
+    <div class="timeline">
+      <article class="job">
+        <div class="when" data-i18n="gr_when">Jun 2021 to present</div>
+        <div>
+          <div class="company">General Resources<small data-i18n="gr_sub">A subsidiary of MiTAC Information Technology (Taiwan)</small></div>
+          <div class="roles">
+            <div>
+              <div class="r-title"><span>Project Management Executive</span><span class="dates" data-i18n="gr_r1d">Jul 2022 to present</span><span class="promo" data-i18n="promo">promoted!</span></div>
+              <ul class="pts">
+                <li data-i18n="gr1_1">Coordinate AI infrastructure and digital transformation projects from order confirmation to delivery and installation.</li>
+                <li data-i18n="gr1_2">Act as the main contact between Taiwanese partners, customers, engineers and logistics providers.</li>
+                <li data-i18n="gr1_3">Track schedules, risks and issues, and resolve them early with technical and logistics teams.</li>
+                <li data-i18n="gr1_4">Build progress, budget and cash flow reports and dashboards in Excel.</li>
+                <li data-i18n="gr1_5">Coordinate international customer events and exhibitions.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="r-title"><span>Construction &amp; Installation Coordinator</span><span class="dates" data-i18n="gr_r2d">Jun 2021 to Jun 2022</span></div>
+              <ul class="pts">
+                <li data-i18n="gr2_1">Tracked progress, contractors and inspection schedules across several construction and installation projects.</li>
+                <li data-i18n="gr2_2">Coordinated contractor payment requests and monitored project costs.</li>
+                <li data-i18n="gr2_3">Supported Project Managers with scheduling and day-to-day issues.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when" data-i18n="ph_when">Oct 2018 to Aug 2020</div>
+        <div>
+          <div class="company">Phugatex<small data-i18n="ph_sub">Textile and garment · Merchandiser</small></div>
+          <ul class="pts">
+            <li data-i18n="ph_1">Kept production and delivery dates on track by coordinating customers, suppliers, production and quality teams.</li>
+            <li data-i18n="ph_2">Resolved material delivery issues directly with suppliers.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when" data-i18n="vbt_when">Feb 2016 to Dec 2018</div>
+        <div>
+          <div class="company">Vietnam Bike Tours<small data-i18n="vbt_sub">Travel · Tour Coordinator</small></div>
+          <ul class="pts">
+            <li data-i18n="vbt_1">Coordinated bookings and supplier payments for domestic and international tours, handling many bookings at once under tight schedules.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="proj" id="projects">
+  <div class="wrap">
+    <span class="time" data-i18n="t_proj">2:00 pm · highlights</span>
+    <h2 class="h2" data-i18n="proj_h">Projects I am proud of</h2>
+    <article class="metro">
+      <figure class="print">
+        <div class="frame"><img src="media/metro-line-1.jpg" alt="The project team in safety vests in front of a Metro Line 1 train at the depot" width="1400" height="1050" loading="lazy"></div>
+        <figcaption data-i18n="cap_metro">with the team at the Metro Line 1 depot</figcaption>
+      </figure>
+      <div>
+        <div class="kicker" data-i18n="p1t">infrastructure</div>
+        <h3 data-i18n="p1h">Ho Chi Minh City Metro Line 1</h3>
+        <p data-i18n="p1p">I coordinated and tracked installation progress on Vietnam's first metro line. Being part of a project the whole city had waited years for is something I will always remember.</p>
+      </div>
+    </article>
+    <article class="metro flip">
+      <figure class="print">
+        <div class="frame"><img src="media/defence-expo-2024-booth.jpg" alt="The MiTAC team at their booth at Vietnam Defence Expo 2024, with a drone displayed overhead" width="1400" height="933" loading="lazy"></div>
+        <figcaption data-i18n="cap_def">our MiTAC booth, Vietnam Defence Expo 2024</figcaption>
+      </figure>
+      <div>
+        <div class="kicker" data-i18n="p2t">exhibition</div>
+        <h3 data-i18n="p2h">Vietnam International Defence Expo 2024 &amp; 2026</h3>
+        <p data-i18n="p2p">Coordinated the company's participation at the expo organised by the Ministry of National Defence, working with suppliers, logistics, marketing and technical teams so the booth was ready on opening day.</p>
+      </div>
+    </article>
+    <div class="cards">
+      <article class="card">
+        <span class="kicker" data-i18n="p3t">technology</span>
+        <h3 data-i18n="p3h">AI infrastructure &amp; digital transformation</h3>
+        <p data-i18n="p3p">Kept cross-functional projects moving between Taiwanese partners, customers and engineers, from the first quotation to final installation.</p>
+      </article>
+      <article class="card">
+        <span class="kicker" data-i18n="p4t">launch event</span>
+        <h3 data-i18n="p4h">Product launch in Hanoi, June 2026</h3>
+        <p data-i18n="p4p">Coordinated the launch of enterprise AI assistants built with MiTAC and AMD, from venue and logistics to the day itself.</p>
+      </article>
+      <article class="card">
+        <span class="kicker" data-i18n="p5t">reporting</span>
+        <h3 data-i18n="p5h">Project dashboards</h3>
+        <p data-i18n="p5p">Excel trackers, budget and cash flow reports that let managers see progress and spending at a glance.</p>
+      </article>
+    </div>
+
+    <h3 class="wall-h" data-i18n="wall_h">From the event wall</h3>
+    <p class="wall-sub" data-i18n="wall_sub">Some events I coordinated, and a few I joined to learn.</p>
+    <div class="wall">
+      <figure class="print"><div class="frame"><img src="media/defence-expo-2024.jpg" alt="The MiTAC delegation in front of the Vietnam Defence Expo 2024 entrance" width="1400" height="933" loading="lazy"></div><figcaption data-i18n="w1">Vietnam Defence Expo 2024, Hanoi</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/aef-2025.jpg" alt="The team at the MiTAC booth at Autumn Economic Forum 2025" width="1400" height="1050" loading="lazy"></div><figcaption data-i18n="w2">coordinated our booth at Autumn Economic Forum 2025</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/ict-comm-2025.jpg" alt="The MiTAC and General Resources team at their booth at Vietnam ICT COMM 2025" width="1400" height="933" loading="lazy"></div><figcaption data-i18n="w3">Vietnam ICT COMM 2025</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/launch-hanoi-2026.jpg" alt="The team at the General Resources, MiTAC and AMD product launch in Hanoi" width="932" height="1400" loading="lazy" style="object-position:50% 62%"></div><figcaption data-i18n="w4">product launch with MiTAC &amp; AMD, Hanoi 2026</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/aef-2026.jpg" alt="Rachel and a colleague in front of the Autumn Economic Forum 2026 backdrop" width="1400" height="1050" loading="lazy"></div><figcaption data-i18n="w5">attending Autumn Economic Forum 2026</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/smartcity-taipei-2025.jpg" alt="Rachel and colleagues at the entrance of SmartCity Summit and Expo 2025 in Taipei" width="1400" height="1050" loading="lazy"></div><figcaption data-i18n="w6">visiting SmartCity Expo, Taipei 2025</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="tool" id="toolkit">
+  <div class="wrap">
+    <span class="time" data-i18n="t_tool">4:00 pm · toolkit</span>
+    <h2 class="h2" data-i18n="tool_h">Skills, languages and education</h2>
+    <div class="tool-grid">
+      <div>
+        <h3 data-i18n="sk_h">Skills</h3>
+        <ul class="skills">
+          <li data-i18n="sk1">Project scheduling</li>
+          <li data-i18n="sk2">Stakeholder coordination</li>
+          <li data-i18n="sk3">Risk &amp; issue tracking</li>
+          <li data-i18n="sk4">Events &amp; exhibitions</li>
+          <li data-i18n="sk5">Vendor management</li>
+          <li data-i18n="sk6">Budget &amp; cash flow reports</li>
+          <li data-i18n="sk7">Project documentation</li>
+          <li data-i18n="sk8">Advanced Excel</li>
+          <li>ERP · EIP</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="lg_h">Languages</h3>
+        <div class="lrow"><span data-i18n="lg_vi">Vietnamese</span><span data-i18n="lg_vi2">Native</span></div>
+        <div class="lrow"><span data-i18n="lg_en">English</span><span>IELTS 6.5</span></div>
+        <div class="lrow"><span data-i18n="lg_zh">Chinese</span><span>HSK4</span></div>
+      </div>
+      <div>
+        <h3 data-i18n="ed_h">Education</h3>
+        <div class="edu">
+          <div><strong data-i18n="ed1">Master of Business Administration</strong><span data-i18n="ed1s">University of Economics Ho Chi Minh City (UEH) · expected 2028</span></div>
+          <div><strong data-i18n="ed2">Bachelor of Banking and Finance</strong><span data-i18n="ed2s">GPA 3.12 / 4.00</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dusk" aria-label="Day to night">
+  <div class="wrap">
+    <span class="time" data-i18n="t_dusk">6:00 pm · sunset</span>
+    <blockquote data-i18n="dusk_q">By day, I keep projects on schedule. By night, I plan my next journey.</blockquote>
+  </div>
+</section>
+
+<section class="night" id="after-hours">
+  <div class="wrap">
+    <span class="time" data-i18n="t_after">8:00 pm · after hours</span>
+    <h2 class="h2" data-i18n="after_h">The person behind the schedule</h2>
+
+    <div class="block">
+      <div>
+        <div class="kicker" data-i18n="tr_k">travel</div>
+        <h3 data-i18n="tr_h">Thailand three times, Taiwan twice</h3>
+        <p data-i18n="tr_p">In Thailand I plan the route, book the stays and lead the group.</p>
+        <p class="quote" data-i18n="tr_q">My friends say I was coordinating long before it was my job title.</p>
+        <p data-i18n="tr_p2">In Taiwan I went on two business trips to meet our partners and visit SmartCity Expo, and I always saved a little time to explore.</p>
+      </div>
+      <div>
+        <div class="reels">
+          <figure class="print"><div class="frame"><video src="media/thailand-1.mp4" poster="media/thailand-1.jpg" controls playsinline preload="none"></video></div><figcaption>Bangkok ep.1</figcaption></figure>
+          <figure class="print"><div class="frame"><video src="media/thailand-2.mp4" poster="media/thailand-2.jpg" controls playsinline preload="none"></video></div><figcaption>Bangkok ep.2</figcaption></figure>
+          <figure class="print"><div class="frame"><video src="media/thailand-3.mp4" poster="media/thailand-3.jpg" controls playsinline preload="none"></video></div><figcaption>Bangkok ep.3</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="pics">
+      <figure class="print"><div class="frame"><img src="media/friends.jpg" alt="Rachel and two friends smiling in a hammock under palm trees" width="1400" height="1050" loading="lazy"></div><figcaption data-i18n="cap_friends">my travel crew</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/taiwan-bali.jpg" alt="Rachel pointing up in front of large red BALI letters by the river in New Taipei" width="1038" height="1400" loading="lazy"></div><figcaption data-i18n="cap_bali">Tamsui, Taipei</figcaption></figure>
+      <figure class="print"><div class="frame"><img src="media/sea.jpg" alt="Rachel sitting on a rock by the sea under a bright blue sky" width="1050" height="1400" loading="lazy"></div><figcaption>说走就走的旅行</figcaption></figure>
+    </div>
+
+    <div class="block" style="margin-top:44px">
+      <div class="dream-photo">
+        <figure class="print"><div class="frame"><img src="media/dreams.jpg" alt="Rachel pointing at the sky from a hilltop" width="1050" height="1400" loading="lazy"></div><figcaption data-i18n="cap_dream">next stop: somewhere further</figcaption></figure>
+      </div>
+      <div>
+        <div class="kicker" data-i18n="cn_k">dream route</div>
+        <h3 data-i18n="cn_h">The China trip I am learning Chinese for</h3>
+        <p data-i18n="cn_p">I love Chinese culture and the elegance of ancient China. One day I want to travel through these places and talk with people in their own language.</p>
+        <p data-i18n="cn_p2">Taiwan was the first place I used Chinese with partners in real life, and it made me want to go further.</p>
+        <div class="route" aria-label="Beijing, Hangzhou, Guizhou, Yunnan, Dali">
+          <div class="stop"><span class="zh">北京</span><span class="en">Beijing</span></div><div class="leg"></div>
+          <div class="stop"><span class="zh">杭州</span><span class="en">Hangzhou</span></div><div class="leg"></div>
+          <div class="stop"><span class="zh">贵州</span><span class="en">Guizhou</span></div><div class="leg"></div>
+          <div class="stop"><span class="zh">云南</span><span class="en">Yunnan</span></div><div class="leg"></div>
+          <div class="stop"><span class="zh">大理</span><span class="en">Dali</span></div>
+        </div>
+        <span class="hsk" data-i18n="cn_hsk">so far: HSK4</span>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div>
+        <div class="block-k hand" style="color:var(--sun)" data-i18n="mv_k">films</div>
+        <h3 style="font-size:1.5rem;color:var(--moon)" data-i18n="mv_h">One ticket, please</h3>
+        <p style="color:var(--moon-soft);margin-top:10px" data-i18n="mv_p">I love films, and my favourite way to watch one is alone at the cinema: a good seat, the lights down and nothing to plan for two hours.</p>
+      </div>
+      <div>
+        <div class="block-k hand" style="color:var(--sun)" data-i18n="dr_k">drawing</div>
+        <h3 style="font-size:1.5rem;color:var(--moon)" data-i18n="dr_h">Drawing for calm, not for perfection</h3>
+        <p style="color:var(--moon-soft);margin-top:10px" data-i18n="dr_p">I draw by following tutorials and do digital colour by number to quiet my mind after a busy day. My drawings are far from perfect, and that is part of the fun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stars" id="stars">
+  <div class="wrap">
+    <span class="time" data-i18n="t_stars">10:00 pm · written in the stars</span>
+    <h2 class="h2" data-i18n="stars_h">Just for fun</h2>
+    <div class="signs">
+      <div class="sign"><div class="which" data-i18n="s1w">Sun</div><h3 data-i18n="s1h">Capricorn</h3><div class="nick" data-i18n="s1n">the planner</div><p data-i18n="s1p">Steady, goal driven and happiest with a clear plan.</p></div>
+      <div class="sign"><div class="which" data-i18n="s2w">Moon</div><h3 data-i18n="s2h">Virgo</h3><div class="nick" data-i18n="s2n">the detail keeper</div><p data-i18n="s2p">Feels at ease when everything is checked and in order.</p></div>
+      <div class="sign"><div class="which" data-i18n="s3w">Rising</div><h3 data-i18n="s3h">Libra</h3><div class="nick" data-i18n="s3n">the mediator</div><p data-i18n="s3p">Friendly first impressions and a knack for finding middle ground.</p></div>
+    </div>
+    <p class="fine" data-i18n="stars_fine">I don't plan projects by the stars, but they describe my working style surprisingly well.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="time" data-i18n="t_contact">11:00 pm · say hello</span>
+    <h2 data-i18n="ct_h">Let's stay in touch</h2>
+    <p class="lede" data-i18n="ct_p">Happy to talk about projects, events, or working across Vietnam and Taiwan.</p>
+    <div class="mail"><code id="email">lgiang0401@gmail.com</code></div>
+    <div class="cta">
+      <a class="btn btn-sun" href="mailto:lgiang0401@gmail.com" data-i18n="ct_mail">Send an email</a>
+      <button class="btn btn-ghost" type="button" id="copy" data-i18n="ct_copy">Copy email</button>
+      <a class="btn btn-ghost" href="cv.pdf" target="_blank" rel="noopener" data-i18n="hero_cta2">View my CV</a>
+    </div>
+    <div class="copy-msg" id="copy-msg" aria-live="polite"></div>
+    <div class="meta"><span data-i18n="where">Ho Chi Minh City, Vietnam</span><span>EN · 中文 · VI</span></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Rachel Le</span>
+    <span class="hand" data-i18n="foot">made with the colours of a whole day, sunrise to night sky</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var VI = {
+    nav_about:"Giới thiệu", nav_exp:"Kinh nghiệm", nav_proj:"Dự án", nav_tool:"Kỹ năng", nav_after:"Ngoài giờ làm", nav_contact:"Liên hệ",
+    hello:"Xin chào, mình là", fullname:"Lê Hoàng Linh Giang · TP. Hồ Chí Minh",
+    hero_role:"Điều phối dự án <span>· dự án xuyên biên giới</span>",
+    hero_tag:"Từ lên kế hoạch cho những chuyến đi đến điều phối dự án xuyên biên giới, mình giúp mọi hành trình về đích.",
+    hero_cta1:"Gửi lời chào", hero_cta2:"Xem CV của mình",
+    f1a:"Từ năm 2016", f1b:"điều phối con người và kế hoạch", f2a:"4 ngành nghề", f2b:"du lịch, dệt may, xây dựng, CNTT", f3b:"IELTS 6.5 · HSK4 · bản ngữ",
+    cap_portrait:"rất vui được gặp bạn!", sticker:"mình đây!",
+    t_about:"8:00 sáng · về mình", about_h:"Một người điều phối bắt đầu từ những chuyến đi",
+    about_p1:"Công việc đầu tiên của mình là điều phối các tour xe đạp khắp Việt Nam. Lúc nào cũng nhiều booking cùng lúc, lịch trình gấp và những vị khách mong mọi thứ thật suôn sẻ. Mình thích nhất khoảnh khắc một kế hoạch cuối cùng cũng ráp lại trọn vẹn.",
+    about_p2:"Mười năm sau, mình vẫn làm đúng điều đó, chỉ là ở những ngành khác nhau: du lịch, dệt may, xây dựng và giờ là hạ tầng CNTT. Hiện mình điều phối các dự án hạ tầng AI và chuyển đổi số tại General Resources, thành viên tập đoàn MiTAC Information Technology (Đài Loan).",
+    about_p3:"Tiếng Anh và tiếng Trung giúp mình trao đổi trực tiếp với đối tác Đài Loan. Ngoài giờ làm, mình đang học Thạc sĩ Quản trị Kinh doanh tại UEH.",
+    good_h:"Mình mang đến cho đội nhóm",
+    v1h:"Kế hoạch luôn đúng hướng", v1p:"100% đơn hàng dự án mình điều phối được giao đúng hạn và đủ số lượng.",
+    v2h:"Mọi người luôn được kết nối", v2p:"Mình là cầu nối giữa đối tác Đài Loan, khách hàng, kỹ sư và đơn vị vận chuyển.",
+    v3h:"Vấn đề được xử lý từ sớm", v3p:"Mình nhận diện rủi ro, theo sát kế hoạch hành động và khắc phục chậm trễ trước khi ảnh hưởng đến khách hàng.",
+    t_exp:"10:00 sáng · kinh nghiệm", exp_h:"Nơi mình đã làm việc",
+    gr_when:"06/2021 đến nay", gr_sub:"Công ty con của MiTAC Information Technology (Đài Loan)", gr_r1d:"07/2022 đến nay", promo:"được thăng chức!", gr_r2d:"06/2021 đến 06/2022",
+    gr1_1:"Điều phối các dự án hạ tầng AI và chuyển đổi số từ khâu xác nhận đơn hàng đến giao hàng và lắp đặt.",
+    gr1_2:"Là đầu mối liên lạc chính giữa đối tác Đài Loan, khách hàng, kỹ sư và đơn vị vận chuyển.",
+    gr1_3:"Theo dõi tiến độ, rủi ro và sự cố, phối hợp với đội kỹ thuật và vận chuyển để xử lý sớm.",
+    gr1_4:"Xây dựng báo cáo tiến độ, ngân sách, dòng tiền và dashboard trên Excel.",
+    gr1_5:"Điều phối các sự kiện khách hàng quốc tế và triển lãm.",
+    gr2_1:"Theo dõi tiến độ, nhà thầu và lịch nghiệm thu của nhiều dự án xây dựng, lắp đặt.",
+    gr2_2:"Điều phối hồ sơ thanh toán cho nhà thầu và theo dõi chi phí dự án.",
+    gr2_3:"Hỗ trợ Quản lý dự án về lịch trình và các vấn đề phát sinh hằng ngày.",
+    ph_when:"10/2018 đến 08/2020", ph_sub:"Dệt may · Merchandiser",
+    ph_1:"Giữ đúng tiến độ sản xuất và giao hàng nhờ phối hợp giữa khách hàng, nhà cung cấp, sản xuất và bộ phận chất lượng.",
+    ph_2:"Trực tiếp làm việc với nhà cung cấp để xử lý sai lệch khi giao nguyên phụ liệu.",
+    vbt_when:"02/2016 đến 12/2018", vbt_sub:"Du lịch · Điều phối tour",
+    vbt_1:"Điều phối booking và thanh toán nhà cung cấp cho các tour trong nước và quốc tế, xử lý nhiều booking cùng lúc với lịch trình gấp.",
+    t_proj:"2:00 chiều · điểm nhấn", proj_h:"Những dự án mình tự hào",
+    cap_metro:"cùng team tại depot Metro số 1",
+    p1t:"hạ tầng", p1h:"Tuyến Metro số 1 TP. Hồ Chí Minh", p1p:"Mình điều phối và theo dõi tiến độ lắp đặt tại tuyến metro đầu tiên của Việt Nam. Được góp mặt trong dự án cả thành phố chờ đợi nhiều năm là điều mình sẽ luôn nhớ.",
+    cap_def:"gian hàng MiTAC, Triển lãm Quốc phòng 2024",
+    p2t:"triển lãm", p2h:"Triển lãm Quốc phòng Quốc tế Việt Nam 2024 & 2026", p2p:"Điều phối sự tham gia của công ty tại triển lãm do Bộ Quốc phòng tổ chức, phối hợp với nhà cung cấp, vận chuyển, marketing và đội kỹ thuật để gian hàng sẵn sàng ngay ngày khai mạc.",
+    p3t:"công nghệ", p3h:"Hạ tầng AI & chuyển đổi số", p3p:"Giữ cho các dự án liên phòng ban vận hành trơn tru giữa đối tác Đài Loan, khách hàng và kỹ sư, từ báo giá đầu tiên đến lắp đặt cuối cùng.",
+    p4t:"ra mắt sản phẩm", p4h:"Sự kiện ra mắt sản phẩm tại Hà Nội, 6/2026", p4p:"Điều phối sự kiện ra mắt các trợ lý AI doanh nghiệp phát triển cùng MiTAC và AMD, từ địa điểm, hậu cần đến ngày diễn ra.",
+    wall_h:"Góc ảnh sự kiện", wall_sub:"Những sự kiện mình đã điều phối, và vài sự kiện mình tham dự để học hỏi.",
+    w1:"Triển lãm Quốc phòng 2024, Hà Nội", w2:"điều phối gian hàng tại Diễn đàn Kinh tế Mùa Thu 2025", w3:"Vietnam ICT COMM 2025",
+    w4:"ra mắt sản phẩm cùng MiTAC & AMD, Hà Nội 2026", w5:"tham dự Diễn đàn Kinh tế Mùa Thu 2026", w6:"tham quan SmartCity Expo, Đài Bắc 2025",
+    p5t:"báo cáo", p5h:"Dashboard dự án", p5p:"Bảng theo dõi trên Excel, báo cáo ngân sách và dòng tiền giúp quản lý nắm tiến độ và chi tiêu chỉ trong một cái nhìn.",
+    t_tool:"4:00 chiều · hành trang", tool_h:"Kỹ năng, ngoại ngữ và học vấn",
+    sk_h:"Kỹ năng", sk1:"Lập tiến độ dự án", sk2:"Điều phối các bên liên quan", sk3:"Theo dõi rủi ro & sự cố", sk4:"Sự kiện & triển lãm", sk5:"Quản lý nhà cung cấp", sk6:"Báo cáo ngân sách & dòng tiền", sk7:"Hồ sơ dự án", sk8:"Excel nâng cao",
+    lg_h:"Ngoại ngữ", lg_vi:"Tiếng Việt", lg_vi2:"Bản ngữ", lg_en:"Tiếng Anh", lg_zh:"Tiếng Trung",
+    ed_h:"Học vấn", ed1:"Thạc sĩ Quản trị Kinh doanh", ed1s:"Đại học Kinh tế TP. Hồ Chí Minh (UEH) · dự kiến 2028", ed2:"Cử nhân Tài chính Ngân hàng", ed2s:"GPA 3.12 / 4.00",
+    t_dusk:"6:00 chiều · hoàng hôn", dusk_q:"Ban ngày, mình giữ cho dự án đúng tiến độ. Ban đêm, mình lên kế hoạch cho hành trình tiếp theo.",
+    t_after:"8:00 tối · ngoài giờ làm", after_h:"Con người đằng sau những lịch trình",
+    tr_k:"du lịch", tr_h:"Ba lần Thái Lan, hai lần Đài Loan",
+    tr_p:"Ở Thái Lan, mình tự lên lộ trình, đặt chỗ ở và dẫn cả nhóm đi.",
+    tr_q:"Bạn bè hay bảo mình đã làm điều phối từ lâu trước khi nó thành chức danh công việc.",
+    tr_p2:"Hai chuyến công tác Đài Loan cho mình gặp trực tiếp các đối tác và tham quan SmartCity Expo, và lần nào mình cũng dành chút thời gian để khám phá.",
+    cap_friends:"hội bạn đồng hành", cap_bali:"Đạm Thủy, Đài Bắc",
+    cap_dream:"điểm đến tiếp theo: xa hơn nữa",
+    cn_k:"hành trình mơ ước", cn_h:"Chuyến đi Trung Quốc mà mình học tiếng Trung để chuẩn bị",
+    cn_p:"Mình yêu văn hóa Trung Hoa và nét đẹp cổ phong của Trung Quốc. Một ngày nào đó, mình muốn đi qua những nơi này và trò chuyện với mọi người bằng chính ngôn ngữ của họ.",
+    cn_p2:"Đài Loan là nơi đầu tiên mình dùng tiếng Trung để làm việc với đối tác ngoài đời thật, và điều đó khiến mình muốn đi xa hơn nữa.",
+    cn_hsk:"hiện tại: HSK4",
+    mv_k:"phim ảnh", mv_h:"Cho mình một vé", mv_p:"Mình mê xem phim, và cách mình thích nhất là đi xem một mình ở rạp: một chỗ ngồi đẹp, đèn tắt và hai tiếng không phải lên kế hoạch cho bất cứ điều gì.",
+    dr_k:"vẽ", dr_h:"Vẽ để tịnh tâm, không phải để hoàn hảo", dr_p:"Mình vẽ theo hướng dẫn và tô màu số hóa để thư giãn sau một ngày bận rộn. Tranh của mình còn xa mới đẹp, và đó cũng là một phần niềm vui.",
+    t_stars:"10:00 tối · chuyện các vì sao", stars_h:"Cho vui thôi",
+    s1w:"Mặt Trời", s1h:"Ma Kết", s1n:"người lập kế hoạch", s1p:"Bền bỉ, hướng tới mục tiêu và vui nhất khi có một kế hoạch rõ ràng.",
+    s2w:"Mặt Trăng", s2h:"Xử Nữ", s2n:"người giữ chi tiết", s2p:"Thấy an tâm khi mọi thứ đã được kiểm tra và ngăn nắp.",
+    s3w:"Cung Mọc", s3h:"Thiên Bình", s3n:"người hòa giải", s3p:"Tạo ấn tượng đầu tiên thân thiện và khéo tìm điểm chung giữa các bên.",
+    stars_fine:"Mình không điều phối dự án theo các vì sao, nhưng chúng tả phong cách làm việc của mình đúng đến bất ngờ.",
+    t_contact:"11:00 tối · gửi lời chào", ct_h:"Giữ liên lạc nhé",
+    ct_p:"Mình luôn vui khi được trò chuyện về dự án, sự kiện, hay chuyện làm việc giữa Việt Nam và Đài Loan.",
+    ct_mail:"Gửi email", ct_copy:"Sao chép email", where:"TP. Hồ Chí Minh, Việt Nam",
+    foot:"làm từ sắc màu của một ngày trọn vẹn, từ bình minh đến bầu trời đêm"
+  };
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var EN = {};
+  nodes.forEach(function(n){ var k=n.getAttribute("data-i18n"); if(!(k in EN)) EN[k]=n.innerHTML; });
+  var copied = {en:"Email copied.", vi:"Đã sao chép email."};
+  var selectMsg = {en:"Select the address above to copy it.", vi:"Hãy bôi đen địa chỉ phía trên để sao chép."};
+  var current = "en";
+  function apply(lang){
+    current = lang;
+    var dict = lang === "vi" ? VI : EN;
+    nodes.forEach(function(n){ var k=n.getAttribute("data-i18n"); if(dict[k]!=null) n.innerHTML = dict[k]; });
+    document.documentElement.lang = lang;
+    document.getElementById("btn-en").setAttribute("aria-pressed", lang==="en");
+    document.getElementById("btn-vi").setAttribute("aria-pressed", lang==="vi");
+    document.getElementById("copy-msg").textContent = "";
+    try{ localStorage.setItem("rl-lang", lang); }catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click", function(){ apply(b.getAttribute("data-lang")); });
+  });
+  var saved = null;
+  try{ saved = localStorage.getItem("rl-lang"); }catch(e){}
+  if(saved === "vi") apply("vi"); else document.documentElement.lang = "en";
+
+  document.getElementById("copy").addEventListener("click", function(){
+    var msg = document.getElementById("copy-msg"), email = document.getElementById("email");
+    function fallback(){
+      try{ var r=document.createRange(); r.selectNodeContents(email); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){}
+      msg.textContent = selectMsg[current];
+    }
+    try{ navigator.clipboard.writeText(email.textContent.trim()).then(function(){ msg.textContent = copied[current]; }, fallback); }
+    catch(e){ fallback(); }
+  });
+
+  // only one video plays at a time
+  var vids = document.querySelectorAll("video");
+  vids.forEach(function(v){ v.addEventListener("play", function(){ vids.forEach(function(o){ if(o!==v) o.pause(); }); }); });
+
+  var nav = document.getElementById("nav");
+  var nightEls = document.querySelectorAll(".dusk, .night, .stars, .contact, footer");
+  function checkNav(){
+    var y = nav.getBoundingClientRect().bottom, isNight = false;
+    nightEls.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if(el.classList.contains("dusk")){ if(r.top + r.height*0.55 <= y && r.bottom > y) isNight = true; }
+      else if(r.top <= y && r.bottom > y) isNight = true;
+    });
+    nav.classList.toggle("is-night", isNight);
+  }
+  window.addEventListener("scroll", checkNav, {passive:true});
+  window.addEventListener("resize", checkNav);
+  checkNav();
+})();
+</script>
+</body>
+</html>
